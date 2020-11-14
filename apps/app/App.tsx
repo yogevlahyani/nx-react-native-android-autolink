@@ -17,9 +17,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 // @ts-ignore
 import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
-import { enableScreens } from 'react-native-screens';
+import ImagePicker from 'react-native-image-picker';
 
-enableScreens();
 
 const App = () => {
   return (
@@ -62,7 +61,7 @@ const App = () => {
               <Text style={styles.sectionTitle}>Learn More</Text>
               <TouchableOpacity
                 accessibilityRole="button"
-                onPress={() => openURLInBrowser('https://nx.dev')}
+                onPress={() => ImagePicker.showImagePicker({}, () => console.log('Done'))}
               >
                 <Text style={styles.sectionDescription}>
                   Visit <Text style={styles.link}>nx.dev</Text> for more info
