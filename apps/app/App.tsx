@@ -9,7 +9,6 @@ import {
   StatusBar,
   TouchableOpacity,
 } from 'react-native';
-import { enableScreens } from 'react-native-screens';
 
 import {
   Colors,
@@ -18,6 +17,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 // @ts-ignore
 import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
+import { enableScreens } from 'react-native-screens';
 
 enableScreens();
 
