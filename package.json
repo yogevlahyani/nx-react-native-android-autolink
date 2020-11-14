@@ -5,6 +5,8 @@
   "scripts": {
     "nx": "nx",
     "start": "nx serve",
+    "ios": "nx run-ios",
+    "android": "nx run-android",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
@@ -26,15 +28,41 @@
     "help": "nx help"
   },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "react": "16.13.1",
+    "react-native": "0.63.2",
+    "react-native-screens": "^2.14.0"
+  },
   "devDependencies": {
+    "@nrwl/eslint-plugin-nx": "10.0.1",
+    "@nrwl/jest": "10.3.3",
+    "@nrwl/react": "*",
+    "@nrwl/react-native": "^10.4.0",
     "@nrwl/workspace": "10.0.1",
+    "@react-native-community/cli-platform-ios": "4.13.0",
+    "@testing-library/jest-native": "3.4.3",
+    "@testing-library/react-native": "7.1.0",
+    "@types/jest": "26.0.8",
     "@types/node": "~8.9.4",
+    "@types/react": "16.9.38",
+    "@types/react-native": "0.63.18",
+    "@typescript-eslint/eslint-plugin": "2.19.2",
+    "@typescript-eslint/parser": "2.19.2",
     "dotenv": "6.2.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.0.0",
+    "eslint-plugin-import": "2.21.2",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-react": "7.20.0",
+    "eslint-plugin-react-hooks": "4.0.4",
+    "jest": "26.2.2",
+    "jest-react-native": "18.0.0",
+    "metro-react-native-babel-preset": "0.63.0",
+    "prettier": "2.0.4",
+    "react-test-renderer": "17.0.1",
+    "ts-jest": "26.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "eslint": "6.8.0",
-    "typescript": "~3.9.3",
-    "prettier": "2.0.4"
+    "typescript": "~3.9.3"
   }
 }

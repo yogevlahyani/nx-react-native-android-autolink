@@ -1,6 +1,69 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "app": {
+      "root": "apps/app",
+      "sourceRoot": "apps/app/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "start": {
+          "builder": "@nrwl/react-native:start",
+          "options": {
+            "port": 8081
+          }
+        },
+        "run-ios": {
+          "builder": "@nrwl/react-native:run-ios",
+          "options": {}
+        },
+        "bundle-ios": {
+          "builder": "@nrwl/react-native:bundle",
+          "outputs": ["apps/app/build"],
+          "options": {
+            "entryFile": "apps/app/index.js",
+            "platform": "ios",
+            "bundleOutput": "dist/apps/app/ios/index.bundle"
+          }
+        },
+        "run-android": {
+          "builder": "@nrwl/react-native:run-android",
+          "options": {}
+        },
+        "build-android": {
+          "builder": "@nrwl/react-native:build-android",
+          "outputs": [
+            "apps/app/android/app/build/outputs/bundle",
+            "apps/app/android/app/build/outputs/apk"
+          ],
+          "options": {}
+        },
+        "bundle-android": {
+          "builder": "@nrwl/react-native:bundle",
+          "options": {
+            "entryFile": "apps/app/index.js",
+            "platform": "android",
+            "bundleOutput": "dist/apps/app/android/index.bundle"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["apps/app/tsconfig.json"],
+            "exclude": ["**/node_modules/**", "!apps/app/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   },
@@ -62,5 +125,6 @@
         "linter": "eslint"
       }
     }
-  }
+  },
+  "defaultProject": "app"
 }
